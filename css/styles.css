@@ -1,0 +1,158 @@
+/* Variables */
+:root {
+    --color-orange: rgb(208, 88, 13);
+    --font-color-white: #EEE;
+    --font-color-gray: #333;
+    --bg-color-light-gray: #EEE; 
+    --bg-color-translucent: #55555548;
+}
+
+/* Font */
+@font-face {
+    font-family: 'norse-bold';
+    src: url('../fonts/Norse-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-size: normal;
+}
+
+/* Document */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+html {
+    font: 16px Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left column */
+.picture {
+    width: 40vw;
+    background-image: url(../img/joshua-sukoff-6bp0-1fTWGk-unsplash.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    justify-content: center;
+    position: relative;
+    color: var(--font-color-white);
+}
+
+.logo {
+    position: relative;
+    top: -16vh;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--bg-color-translucent);
+}
+
+.odin-logo {
+    height: calc(5vh + 5vw);
+    width: auto;
+}
+
+.odin-header {
+    font-size: calc(4vh + 4vw);
+    font-family: 'norse-bold', Helvetica, sans-serif;
+}
+
+.photo-credit {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Right column */
+.content {
+    width: 60vw;
+    background-color: var(--bg-color-light-gray);
+    justify-content: flex-start;
+    padding-top: calc(5rem + 5vh);
+}
+
+.content h2, legend {
+    width: 45vw;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+h2 + h2 {
+    padding: 2rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 3rem 0;
+    gap: 2rem;
+    background-color: white;
+    color: var(--font-color-gray);
+    box-shadow: 0 3px 6px var(--bg-color-translucent);
+}
+
+section {
+    display: flex;
+    height: 4rem;
+    gap: 5vw;
+}
+
+div.input {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+label {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding-bottom: 4px;
+}
+
+input {
+    height: 2rem;
+    font-size: 1rem;
+    padding: 4px 8px;
+    color: black;
+}
+
+.left {
+    padding-left: 4rem;
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.log-in {
+    color: var(--font-color-gray);
+    font-weight: bold;
+}
+
+/* General */
+a {
+    padding: 0 5px;
+}
