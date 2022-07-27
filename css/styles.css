@@ -1,6 +1,9 @@
 /* Variables */
 :root {
-    --color-orange: #E7820C;
+    --color-orange-light: #E7820C;
+    --color-orange-lighter: #f0860d;
+    --color-orange-lightest: #fc8d0e;
+    --color-orange-dark: #d4780f;
     --font-color-white: #EEE;
     --font-color-gray: #333;
     --font-size-header: 5rem;
@@ -162,7 +165,20 @@ button[type="submit"] {
     font-size: var(--font-size-medium);
     margin: var(--padding-medium) 0;
     color: var(--font-color-white);
-    background-color: var(--color-orange);
+    border: 1px solid var(--color-orange-dark);
+    border-radius: 5px;
+    background-color: var(--color-orange-light);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-orange-lighter);
+    cursor: pointer;
+}
+
+button[type="submit"]:active {
+    background-color: var(--color-orange-lightest);
+    transform: scale(0.98);
+    transition: all 0.1s;
 }
 
 button[type="submit"] + p {
@@ -172,7 +188,7 @@ button[type="submit"] + p {
 
 .photo-credit a, .log-in {
     font-weight: bold;
-    color: var(--color-orange);
+    color: var(--color-orange-light);
 }
 
 /* General */
@@ -181,5 +197,5 @@ a {
 }
 
 i {
-    color: var(--color-orange);
+    color: var(--color-orange-light);
 }
