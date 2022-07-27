@@ -1,6 +1,6 @@
 /* Variables */
 :root {
-    --color-orange: rgb(208, 88, 13);
+    --color-orange: #E7820C;
     --font-color-white: #EEE;
     --font-color-gray: #333;
     --font-size-header: 5rem;
@@ -75,6 +75,7 @@ body {
 .odin-logo {
     height: calc(var(--font-size-header) * 1.25);
     width: auto;
+    /* filter: invert(40%) sepia(18%) saturate(4853%) hue-rotate(357deg) brightness(93%) contrast(94%); Filter for changing The Odin Project logo color */
 }
 
 .odin-header {
@@ -160,6 +161,8 @@ button[type="submit"] {
     padding: .4rem 1.5rem;
     font-size: var(--font-size-medium);
     margin: var(--padding-medium) 0;
+    color: var(--font-color-white);
+    background-color: var(--color-orange);
 }
 
 button[type="submit"] + p {
@@ -167,12 +170,16 @@ button[type="submit"] + p {
     margin-bottom: var(--padding-medium);
 }
 
-.log-in {
-    color: var(--font-color-gray);
+.photo-credit a, .log-in {
     font-weight: bold;
+    color: var(--color-orange);
 }
 
 /* General */
 a {
     padding: 0 var(--padding-small);
+}
+
+i {
+    color: var(--color-orange);
 }
