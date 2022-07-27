@@ -136,16 +136,12 @@ section {
     gap: var(--padding-medium);
 }
 
-div.input {
+label {
     display: flex;
     flex-direction: column;
     width: 22vw;
-}
-
-label {
     font-size: var(--font-size-small);
     letter-spacing: .1rem;
-    padding-bottom: var(--padding-small);
 }
 
 input {
@@ -153,6 +149,18 @@ input {
     font-size: var(--font-size-medium);
     padding: 1vh;
     color: black;
+}
+
+.error {
+    color: red;
+    font-family: Helvetica, sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: initial;
+    visibility: hidden;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+    visibility: visible;
 }
 
 .left {

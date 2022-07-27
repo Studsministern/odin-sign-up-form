@@ -37,34 +37,40 @@
             <legend>Let's do this!</legend>
 
             <section class="names">
-                <div class="input">
-                    <label for="fname">FIRST NAME</label>
-                    <input type="text" id="fname" name="fname" placeholder=" " required autofocus>
-                </div>
-                <div class="input">
-                    <label for="lname">LAST NAME</label>
-                    <input type="text" id="lname" name="lname" placeholder=" " required>
-                </div>
+                <label for="fname">
+                    FIRST NAME
+                    <input type="text" id="fname" name="fname" placeholder=" " required pattern="^[^\d\s]+$" autofocus>
+                    <div class="error">*Please input a first name without any spaces or digits.</div>
+                </label>
+                <label for="lname">
+                    LAST NAME
+                    <input type="text" id="lname" name="lname" placeholder=" " required pattern="^[^\d\s]+(\s([^\d\s]+))*$">
+                    <div class="error">*Please input a last name without any digits (make sure spaces are only used between words).</div>
+                </label>
             </section>
             <section class="information">
-                <div class="input">
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email" placeholder=" " required>
-                </div>
-                <div class="input">
-                    <label for="phone">PHONE NUMBER</label>
-                    <input type="tel" id="phone" name="phone" placeholder=" " required>
-                </div>
+                <label for="email">
+                    EMAIL
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                    <div class="error">*Please input a valid email adress. Ex: example.adress@email.co.uk</div>
+                </label>
+                <label for="phone">
+                    PHONE NUMBER
+                    <input type="tel" id="phone" name="phone" placeholder="+__ ___ ___ ___" required pattern="^\+\d{1,2}([\s.-]?\d){9}$">
+                    <div class="error">*Please input a valid 10-11 digit phone number with country code. <br> Ex: +1 234-567-890 or +01 234 567 890</div>
+                </label>
             </section>
             <section class="passwords">
-                <div class="input">
-                    <label for="pass">PASSWORD</label>
-                    <input type="password" id="pass" name="pass" placeholder=" " required>
-                </div>
-                <div class="input">
-                    <label for="confirm-pass">CONFIRM PASSWORD</label>
+                <label for="pass">
+                    PASSWORD
+                    <input type="password" id="pass" name="pass" placeholder=" " required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <div class="error">*Password must contain at least 8 characters with least one uppercase, one lowercase and one number/special character.</div>
+                </label>
+                <label for="confirm-pass">
+                    CONFIRM PASSWORD
                     <input type="password" id="confirm-pass" name="confirm-pass" placeholder=" " required>
-                </div>
+                    <div class="error">*Passwords don't match.</div>
+                </label>
             </section>
         </form>
 
