@@ -58,14 +58,18 @@ body {
 }
 
 .logo {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2vh;
     position: relative;
     top: -16vh;
     padding: 4vh;
     background: var(--bg-color-translucent);
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vh;
+    text-decoration: none;
 }
 
 .odin-logo {
