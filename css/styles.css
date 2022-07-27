@@ -151,7 +151,7 @@ input {
     color: black;
 }
 
-.error {
+.error-message {
     color: red;
     font-family: Helvetica, sans-serif;
     font-size: 0.6rem;
@@ -159,7 +159,7 @@ input {
     visibility: hidden;
 }
 
-input:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+input:required:invalid:not(:focus):not(:placeholder-shown) ~ .error-message {
     visibility: visible;
 }
 
