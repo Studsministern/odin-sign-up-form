@@ -3,8 +3,15 @@
     --color-orange: rgb(208, 88, 13);
     --font-color-white: #EEE;
     --font-color-gray: #333;
+    --font-size-header: 5rem;
+    --font-size-large: 1.3rem;
+    --font-size-medium: .9rem;
+    --font-size-small: .75rem;
     --bg-color-light-gray: #EEE; 
     --bg-color-translucent: #55555548;
+    --padding-large: 1.8rem;
+    --padding-medium: 1rem;
+    --padding-small: .2rem;
 }
 
 /* Font */
@@ -51,22 +58,23 @@ body {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vh;
     position: relative;
     top: -16vh;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem;
+    padding: 4vh;
     background: var(--bg-color-translucent);
 }
 
 .odin-logo {
-    height: calc(5vh + 5vw);
+    height: calc(var(--font-size-header) * 1.25);
     width: auto;
 }
 
 .odin-header {
-    font-size: calc(4vh + 4vw);
+    font-size: var(--font-size-header);
     font-family: 'norse-bold', Helvetica, sans-serif;
 }
 
@@ -74,8 +82,8 @@ body {
     width: 100%;
     position: absolute;
     bottom: 0;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: var(--padding-medium);
+    font-size: var(--font-size-small);
 }
 
 .center {
@@ -88,63 +96,71 @@ body {
     width: 60vw;
     background-color: var(--bg-color-light-gray);
     justify-content: flex-start;
-    padding-top: calc(5rem + 5vh);
+    padding-top: 10vh;
 }
 
 .content h2, legend {
     width: 45vw;
-    font-size: 1.8rem;
+    font-size: var(--font-size-large);
     font-weight: bold;
 }
 
 h2 + h2 {
-    padding: 2rem 0;
+    padding: var(--padding-medium) 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0;
-    padding: 3rem 0;
-    gap: 2rem;
+    justify-content: space-evenly;
+    margin: var(--padding-medium) 0;
+    padding-top: var(--padding-large);
+    padding-bottom: var(--padding-medium);
+    gap: var(--padding-medium);
     background-color: white;
     color: var(--font-color-gray);
-    box-shadow: 0 3px 6px var(--bg-color-translucent);
+    box-shadow: 0 0.5vh 1vh var(--bg-color-translucent);
 }
 
 section {
-    display: flex;
-    height: 4rem;
-    gap: 5vw;
+    display: inline-flex;
+    height: calc(4 * var(--padding-medium));
+    gap: var(--padding-medium);
 }
 
 div.input {
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 22vw;
 }
 
 label {
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding-bottom: 4px;
+    font-size: var(--font-size-small);
+    letter-spacing: .1rem;
+    padding-bottom: var(--padding-small);
 }
 
 input {
-    height: 2rem;
-    font-size: 1rem;
-    padding: 4px 8px;
+    height: var(--padding-large);
+    font-size: var(--font-size-medium);
+    padding: 1vh;
     color: black;
 }
 
 .left {
-    padding-left: 4rem;
+    padding-left: 4vw;
+    padding-right: 4vw;
 }
 
 button[type="submit"] {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    padding: .4rem 1.5rem;
+    font-size: var(--font-size-medium);
+    margin: var(--padding-medium) 0;
+}
+
+button[type="submit"] + p {
+    font-size: var(--font-size-small);
+    margin-bottom: var(--padding-medium);
 }
 
 .log-in {
@@ -154,5 +170,5 @@ button[type="submit"] {
 
 /* General */
 a {
-    padding: 0 5px;
+    padding: 0 var(--padding-small);
 }
