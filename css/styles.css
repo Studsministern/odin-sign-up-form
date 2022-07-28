@@ -61,8 +61,8 @@ body {
 }
 
 .logo {
-    position: relative;
-    top: -16vh;
+    position: relative; /* Moving logo off center by 16 % of viewport height  */
+    top: -16vh;         /* and allowing absolute positioning of .photo-credit */
     padding: 4vh;
     background: var(--bg-color-translucent);
 }
@@ -78,7 +78,6 @@ body {
 .odin-logo {
     height: calc(var(--font-size-header) * 1.25);
     width: auto;
-    /* filter: invert(40%) sepia(18%) saturate(4853%) hue-rotate(357deg) brightness(93%) contrast(94%); Filter for changing The Odin Project logo color */
 }
 
 .odin-header {
@@ -87,11 +86,16 @@ body {
 }
 
 .photo-credit {
-    width: 100%;
-    position: absolute;
+    width: 100%;        /* Fixed on bottom of */
+    position: absolute; /* the left column    */
     bottom: 0;
     padding: var(--padding-medium);
     font-size: var(--font-size-small);
+}
+
+.photo-credit a {
+    font-weight: bold;
+    color: var(--color-orange-light);
 }
 
 .center {
@@ -100,6 +104,11 @@ body {
 }
 
 /* Right column */
+.left {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
 .content {
     width: 60vw;
     background-color: var(--bg-color-light-gray);
@@ -114,20 +123,23 @@ body {
 }
 
 h2 + h2 {
-    padding: var(--padding-medium) 0;
+    padding: var(--padding-medium) 0; /* Padding between text */
 }
 
+/* Form */
 form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: var(--padding-medium);
+    
     margin: var(--padding-medium) 0;
     padding-top: var(--padding-large);
     padding-bottom: var(--padding-medium);
-    gap: var(--padding-medium);
+
+    box-shadow: 0 0.5vh 1vh var(--bg-color-translucent);
     background-color: white;
     color: var(--font-color-gray);
-    box-shadow: 0 0.5vh 1vh var(--bg-color-translucent);
 }
 
 section {
@@ -148,14 +160,15 @@ input {
     height: var(--padding-large);
     font-size: var(--font-size-medium);
     padding: 1vh;
-    color: black;
+    color: black; /* Black to make input stand out */
 }
 
+/* Error messages */
 .error-message {
     color: red;
     font-family: Helvetica, sans-serif;
     font-size: 0.6rem;
-    letter-spacing: initial;
+    letter-spacing: initial; /* Reset spacing from label */
     visibility: hidden;
 }
 
@@ -163,11 +176,7 @@ input:required:invalid:not(:focus):not(:placeholder-shown) ~ .error-message {
     visibility: visible;
 }
 
-.left {
-    padding-left: 4vw;
-    padding-right: 4vw;
-}
-
+/* Creating account and logging in */
 button[type="submit"] {
     padding: .4rem 1.5rem;
     font-size: var(--font-size-medium);
@@ -194,7 +203,7 @@ button[type="submit"] + p {
     margin-bottom: var(--padding-medium);
 }
 
-.photo-credit a, .log-in {
+.log-in {
     font-weight: bold;
     color: var(--color-orange-light);
 }

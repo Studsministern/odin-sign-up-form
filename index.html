@@ -42,30 +42,35 @@
                     <input type="text" id="fname" name="fname" placeholder=" " required="" pattern="^[^\d\s]+$" autofocus>
                     <span class="error-message">Please input a first name without any spaces or digits.</span>
                 </label>
+
                 <label for="lname">
                     <div>LAST NAME<span aria-label="required">*</span></div>
                     <input type="text" id="lname" name="lname" placeholder=" " required="" pattern="^[^\d\s]+(\s([^\d\s]+))*$">
                     <span class="error-message">Please input a last name without any digits (make sure spaces are only used between words).</span>
                 </label>
             </section>
+
             <section class="information">
                 <label for="email">
                     <div>EMAIL<span aria-label="required">*</span></div>
                     <input type="email" id="email" name="email" placeholder="example@email.com" required="" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
                     <span class="error-message">Please input a valid email adress. Ex: example.adress@email.co.uk</span>
                 </label>
+
                 <label for="phone">
                     <div>PHONE NUMBER<span aria-label="required">*</span></div>
                     <input type="tel" id="phone" name="phone" placeholder="+__ ___ ___ ___" required="" pattern="^\+\d{1,2}([\s.-]?\d){9}$">
                     <span class="error-message">Please input a valid 10-11 digit phone number with country code. <br> Ex: +1 234-567-890 or +01 234 567 890</span>
                 </label>
             </section>
+
             <section class="passwords">
                 <label for="pass">
                     <div>PASSWORD<span aria-label="required">*</span></div>
                     <input type="password" id="pass" name="pass" placeholder=" " required="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <span class="error-message">Password must contain at least 8 characters with least one uppercase, one lowercase and one number/special character.</span>
                 </label>
+                
                 <label for="confirm-pass">
                     <div>CONFIRM PASSWORD<span aria-label="required">*</span></div>
                     <input type="password" id="confirm-pass" name="confirm-pass" placeholder=" " required="">
@@ -76,7 +81,7 @@
 
         <div class="left">
             <button type="submit">Create Account</button>
-            <p>Already have an account?<a class="log-in" href="">Log in</a></p>
+            <p>Already have an account?<a class="log-in" href="#">Log in</a></p>
         </div>
     </div>
 </body>
