@@ -172,7 +172,7 @@ input {
     visibility: hidden;
 }
 
-input:required:invalid:not(:focus):not(:placeholder-shown) ~ .error-message {
+input.error ~ .error-message {
     visibility: visible;
 }
 
