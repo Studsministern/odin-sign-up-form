@@ -20,6 +20,14 @@ function validateForm(e) {
     }
 }
 
+function validateConfirmPassword() {
+    if(confirmPassword.value === password.value) {
+        confirmPassword.classList.remove('error');
+    } else {
+        confirmPassword.classList.add('error');
+    }
+}
+
 const form = document.querySelector('form');
 form.noValidate = true;
 
@@ -51,20 +59,8 @@ labels.forEach(label => {
     });
 });
 
-password.addEventListener('input', () => {
-    if(confirmPassword.value === password.value) {
-        confirmPassword.classList.remove('error');
-    } else {
-        confirmPassword.classList.add('error');
-    }
-});
+password.addEventListener('input', validateConfirmPassword);
 
-confirmPassword.addEventListener('input', () => {
-    if(confirmPassword.value === password.value) {
-        confirmPassword.classList.remove('error');
-    } else {
-        confirmPassword.classList.add('error');
-    }
-});
+confirmPassword.addEventListener('input', validateConfirmPassword);
 
 submit.addEventListener('click', validateForm);
