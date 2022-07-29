@@ -1,4 +1,7 @@
 const labels = document.querySelectorAll('label');
+const password = document.querySelector('#pass');
+const confirmPassword = document.querySelector('#confirm-pass');
+let hasMatched = false;
 
 labels.forEach(label => {
     const input = label.querySelector('input');
@@ -22,4 +25,24 @@ labels.forEach(label => {
             }
         }
     });
+});
+
+password.addEventListener('input', () => {
+    if(hasMatched) {
+        if(confirmPassword.value === password.value) {
+            confirmPassword.classList.remove('error');
+        } else {
+            confirmPassword.classList.add('error');
+        }
+    }
+});
+
+confirmPassword.addEventListener('input', () => {
+    if(confirmPassword.value === password.value) {
+        confirmPassword.classList.remove('error');
+        hasMatched = true;
+    } else {
+        confirmPassword.classList.add('error');
+        hasMatched = false;
+    }
 });
