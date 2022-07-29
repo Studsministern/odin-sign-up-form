@@ -20,6 +20,25 @@ function validateForm(e) {
     }
 }
 
+function validateLabelFocusOut(input) {
+    if(input.checkValidity()) {
+        input.classList.remove('hasError');
+    } else if(input.value !== '' && !input.checkValidity()) {
+        input.classList.add('error');
+        input.classList.add('hasError');
+    }
+}
+
+function validateInputChange(input) {
+    if(input.className.includes('hasError')) {
+        if(input.checkValidity()) {
+            input.classList.remove('error');
+        } else {
+            input.classList.add('error');
+        }
+    }
+}
+
 function validateConfirmPassword() {
     if(confirmPassword.value === password.value) {
         confirmPassword.classList.remove('error');
@@ -38,25 +57,8 @@ const submit = document.querySelector('[type="submit"]');
 
 labels.forEach(label => {
     const input = label.querySelector('input');
-    
-    label.addEventListener('focusout', () => {
-        if(input.checkValidity()) {
-            input.classList.remove('hasError');
-        } else if(input.value !== '' && !input.checkValidity()) {
-            input.classList.add('error');
-            input.classList.add('hasError');
-        }
-    });
-
-    input.addEventListener('input', () => {
-        if(input.className.includes('hasError')) {
-            if(input.checkValidity()) {
-                input.classList.remove('error');
-            } else {
-                input.classList.add('error');
-            }
-        }
-    });
+    label.addEventListener('focusout', () => validateLabelFocusOut(input));
+    input.addEventListener('input', () => validateInputChange(input));
 });
 
 password.addEventListener('input', validateConfirmPassword);
