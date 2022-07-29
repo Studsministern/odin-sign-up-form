@@ -1,23 +1,47 @@
-const labels = document.querySelectorAll('label');
-const password = document.querySelector('#pass');
-const confirmPassword = document.querySelector('#confirm-pass');
-let hasMatched = false;
+function validateForm(e) {
+    if(form.checkValidity() && 
+      (confirmPassword.value === password.value)) {
+        // Form is valid
+    } else {
+        e.preventDefault(); // Cancel submit
+
+        labels.forEach(label => {
+            const input = label.querySelector('input');
+            
+            if(!input.checkValidity()) {
+                input.classList.add('error');
+                input.classList.add('hasError');
+            }
+        });
+
+        if(confirmPassword.value !== password.value) {
+            confirmPassword.classList.add('error');
+        }
+    }
+}
+
+const form = document.querySelector('form');
+form.noValidate = true;
+
+const labels = form.querySelectorAll('label');
+const password = form.querySelector('#pass');
+const confirmPassword = form.querySelector('#confirm-pass');
+const submit = document.querySelector('[type="submit"]');
 
 labels.forEach(label => {
     const input = label.querySelector('input');
-    let hasError = false;
     
     label.addEventListener('focusout', () => {
         if(input.checkValidity()) {
-            hasError = false;
+            input.classList.remove('hasError');
         } else if(input.value !== '' && !input.checkValidity()) {
             input.classList.add('error');
-            hasError = true;
+            input.classList.add('hasError');
         }
     });
 
     input.addEventListener('input', () => {
-        if(hasError) {
+        if(input.className.includes('hasError')) {
             if(input.checkValidity()) {
                 input.classList.remove('error');
             } else {
@@ -28,21 +52,19 @@ labels.forEach(label => {
 });
 
 password.addEventListener('input', () => {
-    if(hasMatched) {
-        if(confirmPassword.value === password.value) {
-            confirmPassword.classList.remove('error');
-        } else {
-            confirmPassword.classList.add('error');
-        }
+    if(confirmPassword.value === password.value) {
+        confirmPassword.classList.remove('error');
+    } else {
+        confirmPassword.classList.add('error');
     }
 });
 
 confirmPassword.addEventListener('input', () => {
     if(confirmPassword.value === password.value) {
         confirmPassword.classList.remove('error');
-        hasMatched = true;
     } else {
         confirmPassword.classList.add('error');
-        hasMatched = false;
     }
 });
+
+submit.addEventListener('click', validateForm);
