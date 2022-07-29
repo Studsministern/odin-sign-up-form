@@ -1,3 +1,4 @@
+/* Validations */
 function validateForm(e) {
     if(form.checkValidity() && 
       (confirmPassword.value === password.value)) {
@@ -22,14 +23,14 @@ function validateForm(e) {
 
 function validateLabelFocusOut(input) {
     if(input.checkValidity()) {
-        input.classList.remove('hasError');
+        input.classList.remove('hasError'); // Resets to lazy validation
     } else if(input.value !== '' && !input.checkValidity()) {
         input.classList.add('error');
-        input.classList.add('hasError');
+        input.classList.add('hasError');    // Activates aggressive validation
     }
 }
 
-function validateInputChange(input) {
+function validateInputChange(input) { // Aggressive validation on every button press
     if(input.className.includes('hasError')) {
         if(input.checkValidity()) {
             input.classList.remove('error');
@@ -39,7 +40,7 @@ function validateInputChange(input) {
     }
 }
 
-function validateConfirmPassword() {
+function validateConfirmPassword() { // Makes sure passwords are equal
     if(confirmPassword.value === password.value) {
         confirmPassword.classList.remove('error');
     } else {
@@ -47,14 +48,16 @@ function validateConfirmPassword() {
     }
 }
 
+/* DOM variables */
 const form = document.querySelector('form');
-form.noValidate = true;
-
 const labels = form.querySelectorAll('label');
 const password = form.querySelector('#pass');
 const confirmPassword = form.querySelector('#confirm-pass');
 const submit = document.querySelector('[type="submit"]');
 
+form.noValidate = true; // Prevents submitting before validation
+
+/* Event listeners */
 labels.forEach(label => {
     const input = label.querySelector('input');
     label.addEventListener('focusout', () => validateLabelFocusOut(input));
