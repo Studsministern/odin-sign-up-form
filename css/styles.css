@@ -41,6 +41,7 @@ html {
 body {
     min-height: 100vh;
     display: flex;
+    background-color: var(--bg-color-light-gray);
 }
 
 .column {
@@ -111,7 +112,6 @@ body {
 
 .content {
     width: 60vw;
-    background-color: var(--bg-color-light-gray);
     justify-content: flex-start;
     padding-top: 10vh;
 }
@@ -200,7 +200,7 @@ button[type="submit"]:active {
 
 button[type="submit"] + p {
     font-size: var(--font-size-small);
-    margin-bottom: var(--padding-medium);
+    margin-bottom: calc(3 * var(--padding-medium));
 }
 
 .log-in {
@@ -215,4 +215,56 @@ a {
 
 i {
     color: var(--color-orange-light);
+}
+
+/* Mobile and tablet mode */
+@media (max-width: 800px), (orientation: portrait) {
+    body {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .picture {
+        height: 30vh;
+    }
+
+    .logo {
+        top: 0;
+    }
+
+    .content {
+        padding-top: 5vh;
+    }
+
+    .content h2, legend {
+        width: 85vw;
+    }
+
+    label {
+        width: 44%;
+    }
+}
+
+@media (max-width: 450px) {
+    .content > div.left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    section {
+        flex-direction: column;
+        height: auto;
+        gap: var(--padding-medium);
+    }
+    
+    label {
+        height: calc(4 * var(--padding-medium));
+        width: auto;
+    }
 }
