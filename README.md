@@ -5,8 +5,8 @@ A project for creating a sign up-page for [The Odin Project Full Stack JavaScrip
 &nbsp;
 <div align="center">
   <div style="display: flex; flex-direction: row;">
-    <img src="img/sign-up page.png" height="400">
-    <img src="img/sign-up page mobile.png" height="400">
+    <img src="img/sign-up page.png" height="350">
+    <img src="img/sign-up page mobile.png" height="350">
   </div>
   <div>
     The left image is a screenshot of the sign-up page with desktop resolution. The right image is a screenshot of the sign-up page with mobile resolution and where all inputs are incorrect. Error messages are shown below each input.
